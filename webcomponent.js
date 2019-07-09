@@ -21,7 +21,7 @@
                 document.head.removeChild(d3Script);
             }
             catch{}
-            }
+        }
     
         constructor() {
             super();
