@@ -1,0 +1,103 @@
+{
+	"name": "Gauge - AIN369-Solution",
+	"description": "Gauge Custom Widget",
+	"eula": "",
+	"vendor": "SAP",
+	"license": "",
+	"id": "com.sap.sample.gauge.ain369.solution",
+	"newInstancePrefix": "GaugeAIN369_Sol",
+	"version": "1.0.0",
+	"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAb1BMVEX///+ZmZl4dXdBPj9hYGGOjpE6ODo8OjwvLC0lISIpJSaMiooyLzH/cjMxLi9GREb/ZSk2MzV9fX1MSks4NjcrJyn/WR9ycnJRT1AtKiv/TRVdXF1ra2v7VCfJyMk+PD6tra+rqqtUUlU0MTNqaGpjxDg2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAKhJREFUGNM9z9EagiAMBeDpEGkWNAGhqFTq/Z8xwK/+q7PtZgeg6npEMcBPJ0d1Kmg6ZnFGRZcLESnR7tpoouuVSCPPZYHWee+XxTsrvQeYQrwV97tL5uZigMeoqucTUSnWEVBX4fWaW2BYz1W3bXsLDPldcD8MoYZ3glmMjNbGLJk5igDgnLTGHazdAPo1Gdms2bZXhRmbMuNR5rNWJuX075sMYg57jV94IQ2Xqt1atQAAAABJRU5ErkJggg==",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-sap-teched-gauge-solution",
+            "url": "https://github.wdf.sap.corp/pages/d023588/orca_customWidget_samples/gauge/webcomponent.js",
+			"properties": [
+                "measureMax",
+				"measureMin",
+				"measureVal",
+				"angleMax",
+                "angleMin",
+                "eventEffects"
+			],
+            "integrity": "",
+            "ignoreIntegrity" : true
+		},
+		{
+			"kind": "styling",
+			"tag": "com-sap-teched-gauge-solution-aps",
+            "url": "https://github.wdf.sap.corp/pages/d023588/orca_customWidget_samples/gauge/aps_webcomponent.js",
+			"properties": [
+                "measureMax",
+				"measureMin",
+				"angleMax",
+                "angleMin",
+                "eventEffects"
+			],
+			"integrity": "",
+            "ignoreIntegrity" : true
+		}
+    ],
+	"properties": {
+		"measureMax": {
+			"type": "number",
+			"description": "The max value the measure can take"
+		},
+		"measureMin": {
+            "type": "number",
+            "description": "The min value the measure can take"
+		},
+		"angleMax": {
+            "type": "number",
+            "description": "The resting angle of the gauge"
+		},
+		"angleMin": {
+            "type": "number",
+            "description": "The max anfgle of the gauge"
+		},
+		"measureVal": {
+            "type": "number",
+            "description": "Where the needle should be"
+        },
+        "eventEffects":{}
+	},
+	"methods": {
+		"updateDrawing": {
+			"description": "Update the gauge",
+			"parameters": [
+                {
+					"name": "measureMin",
+					"type": "number",
+					"description": "Minim Measure Value, at which the gauge is in the rest position"
+				},
+				{
+					"name": "measureMax",
+					"type": "number",
+					"description": "Maximum Measure Value, at which the gauge is in the max position"
+				},
+				{
+					"name": "measureVal",
+					"type": "number",
+					"description": "The measure value"
+				},
+				{
+					"name": "angleMin",
+					"type": "number",
+					"description": "The angle of the gauge at minimum value"
+				},
+				{
+					"name": "angleMax",
+					"type": "number",
+					"description": "The angle of the gauge at maximum value"
+				}
+			],
+            "body": "this.measureMin = measureMin;this.measureMax = measureMax;this.measureVal = measureVal;"
+		}
+	},
+	"events": {
+	   "onClick": {
+			"description": "Gauge was clicked"
+	   }
+	}
+}
