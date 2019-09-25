@@ -22,6 +22,12 @@
             }
             catch{}
         }
+
+        connectedCallback () {
+            const bcRect = this.getBoundingClientRect();
+            this._widgetHeight = bcRect.height;
+            this._widgetWidth = bcRect.width;
+        }
     
         constructor() {
             super();
